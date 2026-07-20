@@ -212,16 +212,28 @@ export const EQUIPMENT_CATEGORIES: EquipmentCategory[] = [
   "Cardio", "Chest", "Back", "Shoulder", "Arms", "Legs", "Functional", "Free Weights",
 ];
 
-export type GalleryTile = { label: string; hue: number; tall?: boolean };
+import strengthImg from "../assets/gallery/strength.jpg.asset.json";
+import cardioImg from "../assets/gallery/cardio.jpg.asset.json";
+import functionalImg from "../assets/gallery/functional.jpg.asset.json";
+import yogaImg from "../assets/gallery/yoga.jpg.asset.json";
+import crossfitImg from "../assets/gallery/crossfit.jpg.asset.json";
+import freeweightsImg from "../assets/gallery/freeweights.jpg.asset.json";
+import groupImg from "../assets/gallery/group.jpg.asset.json";
+import recoveryImg from "../assets/gallery/recovery.jpg.asset.json";
+import proteinbarImg from "../assets/gallery/proteinbar.jpg.asset.json";
+import lockerImg from "../assets/gallery/locker.jpg.asset.json";
+
+export type GalleryTile = { label: string; hue: number; tall?: boolean; src: string };
 export const GALLERY: GalleryTile[] = [
-  { label: "Strength Zone", hue: 210, tall: true },
-  { label: "Cardio Deck", hue: 195 },
-  { label: "Functional Turf", hue: 220, tall: true },
-  { label: "Yoga Studio", hue: 260 },
-  { label: "CrossFit Rig", hue: 200 },
-  { label: "Free Weights", hue: 205, tall: true },
-  { label: "Group Class", hue: 190 },
-  { label: "Recovery Lounge", hue: 230 },
-  { label: "Protein Bar", hue: 40, tall: true },
-  { label: "Locker Room", hue: 215 },
+  { label: "Strength Zone", hue: 210, tall: true, src: strengthImg.url },
+  { label: "Cardio Deck", hue: 195, src: cardioImg.url },
+  { label: "Functional Turf", hue: 220, tall: true, src: functionalImg.url },
+  { label: "Yoga Studio", hue: 260, src: yogaImg.url },
+  { label: "CrossFit Rig", hue: 200, src: crossfitImg.url },
+  { label: "Free Weights", hue: 205, tall: true, src: freeweightsImg.url },
+  { label: "Group Class", hue: 190, src: groupImg.url },
+  { label: "Recovery Lounge", hue: 230, src: recoveryImg.url },
+  { label: "Protein Bar", hue: 40, tall: true, src: proteinbarImg.url },
+  { label: "Locker Room", hue: 215, src: lockerImg.url },
 ];
+
