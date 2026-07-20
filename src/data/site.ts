@@ -212,16 +212,16 @@ export const EQUIPMENT_CATEGORIES: EquipmentCategory[] = [
   "Cardio", "Chest", "Back", "Shoulder", "Arms", "Legs", "Functional", "Free Weights",
 ];
 
-import strengthImg from "../assets/gallery/strength.jpg.asset.json";
-import cardioImg from "../assets/gallery/cardio.jpg.asset.json";
-import functionalImg from "../assets/gallery/functional.jpg.asset.json";
-import yogaImg from "../assets/gallery/yoga.jpg.asset.json";
-import crossfitImg from "../assets/gallery/crossfit.jpg.asset.json";
-import freeweightsImg from "../assets/gallery/freeweights.jpg.asset.json";
-import groupImg from "../assets/gallery/group.jpg.asset.json";
-import recoveryImg from "../assets/gallery/recovery.jpg.asset.json";
-import proteinbarImg from "../assets/gallery/proteinbar.jpg.asset.json";
-import lockerImg from "../assets/gallery/locker.jpg.asset.json";
+import strengthImg from "../assets/gallery/strength.jpg";
+import cardioImg from "../assets/gallery/cardio.jpg";
+import functionalImg from "../assets/gallery/functional.jpg";
+import yogaImg from "../assets/gallery/yoga.jpg";
+import crossfitImg from "../assets/gallery/crossfit.jpg";
+import freeweightsImg from "../assets/gallery/freeweights.jpg";
+import groupImg from "../assets/gallery/group.jpg";
+import recoveryImg from "../assets/gallery/recovery.jpg";
+import proteinbarImg from "../assets/gallery/proteinbar.jpg";
+import lockerImg from "../assets/gallery/locker.jpg";
 
 export type GalleryTile = { label: string; hue: number; tall?: boolean; src: string };
 export const GALLERY: GalleryTile[] = [
