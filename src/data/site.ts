@@ -105,11 +105,11 @@ export type Plan = {
   name: string; price: string; period: string; features: string[]; highlighted?: boolean; cta: string;
 };
 export const PLANS: Plan[] = [
-  { name: "Basic", price: "$39", period: "/month", cta: "Start Basic",
+  { name: "Basic", price: "₹799", period: "/month", cta: "Start Basic",
     features: ["Full gym floor access", "Locker & shower use", "Free WiFi & parking", "Weekday 6 AM – 10 PM"] },
-  { name: "Premium", price: "$79", period: "/month", highlighted: true, cta: "Go Premium",
+  { name: "Premium", price: "₹2499", period: "/month", highlighted: true, cta: "Go Premium",
     features: ["Everything in Basic", "24/7 unlimited access", "All group classes", "2 personal training sessions/mo", "Nutrition consultation", "Guest passes (2/mo)"] },
-  { name: "Elite", price: "$149", period: "/month", cta: "Join Elite",
+  { name: "Elite", price: "₹8499", period: "/month", cta: "Join Elite",
     features: ["Everything in Premium", "Weekly personal training", "Custom meal plan", "Recovery lounge access", "Priority booking", "Body composition scans"] },
 ];
 
