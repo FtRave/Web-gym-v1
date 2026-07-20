@@ -4,10 +4,6 @@ import { GALLERY } from "../../data/site";
 import { Dialog, DialogContent, DialogTitle } from "../ui/dialog";
 import { X } from "lucide-react";
 
-function tile(hue: number, label: string) {
-  return `linear-gradient(135deg, oklch(0.25 0.08 ${hue}) 0%, oklch(0.15 0.04 ${hue}) 100%)`;
-}
-
 export function Gallery() {
   const [open, setOpen] = useState<number | null>(null);
   return (
@@ -23,17 +19,22 @@ export function Gallery() {
           <button
             key={g.label}
             onClick={() => setOpen(i)}
-            className="group relative block w-full break-inside-avoid overflow-hidden rounded-2xl border border-border transition-transform hover:scale-[1.02]"
-            style={{
-              aspectRatio: g.tall ? "3 / 4" : "4 / 3",
-              background: tile(g.hue, g.label),
-            }}
+            className="group relative block w-full break-inside-avoid overflow-hidden rounded-2xl border border-border bg-card transition-transform hover:scale-[1.02]"
+            style={{ aspectRatio: g.tall ? "3 / 4" : "4 / 3" }}
             aria-label={`Open ${g.label}`}
           >
-            <div className="absolute inset-0 grid place-items-center bg-black/20 opacity-0 transition-opacity group-hover:opacity-100">
+            <img
+              src={g.src}
+              alt={g.label}
+              loading="lazy"
+              width={1024}
+              height={1024}
+              className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 grid place-items-center bg-black/40 opacity-0 transition-opacity group-hover:opacity-100">
               <span className="rounded-full glass px-4 py-2 text-xs font-semibold">View</span>
             </div>
-            <span className="absolute bottom-3 left-3 rounded-full bg-black/50 px-3 py-1 text-xs font-medium backdrop-blur">
+            <span className="absolute bottom-3 left-3 rounded-full bg-black/60 px-3 py-1 text-xs font-medium backdrop-blur">
               {g.label}
             </span>
           </button>
@@ -41,14 +42,18 @@ export function Gallery() {
       </div>
 
       <Dialog open={open !== null} onOpenChange={(v) => !v && setOpen(null)}>
-        <DialogContent className="max-w-3xl border-border bg-card p-0">
+        <DialogContent className="max-w-3xl border-border bg-card p-0 overflow-hidden">
           <DialogTitle className="sr-only">{open !== null ? GALLERY[open].label : "Gallery image"}</DialogTitle>
           {open !== null && (
-            <div
-              className="aspect-video w-full rounded-lg"
-              style={{ background: tile(GALLERY[open].hue, GALLERY[open].label) }}
-            >
-              <div className="flex h-full items-end p-6">
+            <div className="relative">
+              <img
+                src={GALLERY[open].src}
+                alt={GALLERY[open].label}
+                width={1024}
+                height={1024}
+                className="h-auto w-full object-cover"
+              />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-6">
                 <span className="font-display text-2xl font-bold">{GALLERY[open].label}</span>
               </div>
             </div>
